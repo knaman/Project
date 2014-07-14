@@ -1,7 +1,7 @@
 angular.module('myApp.controllers', ['ngDragDrop'])
     .controller('LeftCtrl', ['$scope','$rootScope', function ($scope,$rootScope) {
         $rootScope.no_of_projects=1;
-        $rootScope.projects=[{"name":"Project 1","members":[{"name":"Admin","role":"Project Lead"}],
+        $rootScope.projects=[{"name":"Project 1","members":[{"name":"Admin","role":"Project Lead","assign":false}],
                               "display":false,"important":false,"completed":false,"time_limit":null}];
         $rootScope.members = [{"name":"Admin","projects":[{"prj_name":"Project 1"}],"prjs":1}];
         $scope.name=" ";
@@ -85,7 +85,7 @@ angular.module('myApp.controllers', ['ngDragDrop'])
             }
         }
          parent.display=false;
-         array.push({"name":$data.name,"role":false});
+         array.push({"name":$data.name,"role":"","assign":true});
          $rootScope.prj_name=parent.name;
         };
        }]).
@@ -125,6 +125,14 @@ angular.module('myApp.controllers', ['ngDragDrop'])
             break;
         }
       }
+    }
+    $scope.show_form=function(member){
+        if(role==null){
+            alert("Empty Role cannot be assigned to " + member.name);
+        }
+        else{
+            member.assign=false;
+        }
     }
     $location.path("/");
      }
