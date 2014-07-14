@@ -4,11 +4,9 @@
 <ul>
 	<li ng-repeat ="member in project.members">
 	<div style="display:inline">{{member.name}}-</div>
-	<div ng-show="member.assign" style="display:inline;width:150px;">
-	<form ng-submit="show_form(member)">
+	<form ng-submit="show_form(member)" ng-show="member.assign" style="display:inline;width:150px;">
 				<input type="text" class="form-control"  ng-model="member.role" placeholder="assign role">
 					</form>
-       </div>
 				
 	 <div style="display:inline" ng-hide="member.assign"><i>{{member.role}}</i></div>
 	 </br>
