@@ -25,6 +25,7 @@ angular.module('myApp.controllers', ['ngDragDrop'])
          };
     }])
     .controller('MainCtrl', ['$scope','$rootScope', function ($scope,$rootScope) {
+        $scope.type="All";
        $scope.prj_name=" ";
        $scope.hide=true;
         $scope.filter_prj=function(prj){
@@ -35,17 +36,20 @@ angular.module('myApp.controllers', ['ngDragDrop'])
         }
         $scope.prj_filter=function(x){
           if(x=="All"){
+            $scope.type="All";
             $scope.filter_prj=function(prj){
              return true;
             }
           }
           else if(x=="Completed"){
+              $scope.type="Completed";
             $scope.filter_prj=function(prj){
               return prj.completed;
              }
            }
            else if (x=="Time-Bound")
            {
+               $scope.type="Time-Bound";
             $scope.filter_prj=function(prj){
               if(prj.time_limit==null)
                 return false;
@@ -55,6 +59,7 @@ angular.module('myApp.controllers', ['ngDragDrop'])
            }
            else if (x=="Important")
            {
+            $scope.type="Important";
             $scope.filter_prj=function(prj){
               return prj.important;
              }
