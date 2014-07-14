@@ -126,8 +126,9 @@ angular.module('myApp.controllers', ['ngDragDrop'])
         }
       }
     }
-    $scope.show_form=function(member){
-        alert("hi");
+    $location.path("/");
+     }
+     $scope.show_form=function(member){
         console.log(member);
         if(member.role==null){
             alert("Empty Role cannot be assigned to " + member.name);
@@ -136,6 +137,4 @@ angular.module('myApp.controllers', ['ngDragDrop'])
             member.assign=false;
         }
     }
-    $location.path("/");
-     }
     }]);
