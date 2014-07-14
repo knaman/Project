@@ -102,7 +102,6 @@ angular.module('myApp.controllers', ['ngDragDrop'])
     }]).
     controller('PrjCtrl', ['$scope','$rootScope','$routeParams','$location', function ($scope,$rootScope,$routeParams,$location) {
     $scope.project={};
-    $scope.show=true;
     for(var i=0;i<$rootScope.projects.length;i++)     
       {
               if($rootScope.projects[i].name==$routeParams.projectId){
@@ -128,8 +127,5 @@ angular.module('myApp.controllers', ['ngDragDrop'])
       }
     }
     $location.path("/");
-     }
-     $scope.show_form=function(){
-         $scope.show=false;
      }
     }]);
