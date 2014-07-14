@@ -1,0 +1,61 @@
+<div class="row">
+  				<div class="col-xs-12 col-md-8">
+					<div class="title">
+						<h1>Projects {{no_of_projects}}</h1>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="header">
+					<div class="addprj">
+          				<button class="btn btn-default" type="button" ng-click="show()">
+          				<span class="glyphicon glyphicon-plus"></span>Add Project</button>
+					</div>
+					<div ng-hide="hide" >
+					<form ng-submit="AddPrj()">
+					<input type="text" class="form-control"  ng-model="prj_name" >
+					</form>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="btn-group">
+  				<button type="button" class="btn btn-drfault">Select</button>
+  				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    			<span class="caret"></span>
+    			<span class="sr-only">Toggle Dropdown</span>
+  				</button>
+  				<ul class="dropdown-menu" role="menu">
+    				<li ng-click="prj_filter('All')"><a href="" >All</a></li>
+    				<li ng-click="prj_filter('Important')"><a href="" >Important</a></li>
+    				<li ng-click="prj_filter('Completed')"><a href="" >Completed</a></li>
+    				<li ng-click="prj_filter('Time-Bound')"><a href="" >Time-Bound</a></li>
+  				</ul>
+			</div>
+			<div class="projects">
+			<div class="row">
+				<div class="col-xs-6 col-md-4 coloumns" ng-repeat ="project in projects | filter:filter_prj" >
+				 	<div class="prjdetails">
+                     
+				 	<ul ui-on-Drop="onDrop($event,$data,project.members,project)">
+				 		<span style="width:50%;">{{project.name}}</span>
+				 		<span style="width:50%;left:40%;position:relative; font-size:15px;">
+                         <span class="glyphicon glyphicon-ok completed-{{project.completed}}
+                         " style="color:green;"></span> 
+                         <span class="glyphicon glyphicon-bookmark 
+                         important-{{project.important}}" style="color:red;"></span>
+                         <span class="glyphicon glyphicon-time time-limit-{{project.time_limit}}" 
+                         style="color:blue;"></span>
+				 		</span>
+				 		<i ng-show="project.display"></br>Start adding team members</i>
+				 		<li   ng-repeat = "member in project.members track by $index">
+				 		<a href='#member/{{member.name}}'>
+				 			<div class="btn btn-success">{{member.name}}</div>
+				 		</a>
+				 		</li>
+				 		<a href ="#project/{{project.name}}">More</a>
+				 	</ul>
+				 	
+				 	</div>
+				</div>
+			</div>
+			</div>

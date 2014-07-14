@@ -1,0 +1,10 @@
+<div class="xyz">
+<h3 style="text-align:center;">{{member.name}}</h3>
+<h4>Projects</h4>
+<ul>
+	<li ng-repeat ="prj in member.projects">
+	<a ng-href="#/project/{{prj.prj_name}}">{{prj.prj_name}}</a>
+	</li>
+</ul>
+<a href="#">Home</a>
+</div>

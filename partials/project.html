@@ -1,0 +1,17 @@
+<div class="xyz">
+<h3 style="text-align:center;">{{project.name}}</h3>
+<h4>Members</h4>
+<ul>
+	<li ng-repeat ="member in project.members">
+	 {{member.name}}
+	</li>
+</ul>
+<h4>Options</h4>
+<ul>
+<li>Mark Important:<input type="checkbox" ng-model="project.important"></li>
+<li>Project Completed:<input type="checkbox" ng-model="project.completed"></li>
+<li>Set Time:<input type="number" ng-model="project.time_limit">days</li>
+<li><button type="button" class="btn btn-danger" ng-click="remove(project)">Delete</button></li>
+</ul>
+<a href="#">Home</a>
+</div>
