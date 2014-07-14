@@ -4,9 +4,9 @@
 <ul>
 	<li ng-repeat ="member in project.members">
 	<div style="display:inline">{{member.name}}-</div>
-	<div ng-show="member.assign" style="display:inline">
+	<div ng-show="member.assign" style="display:inline;width:150px;">
 	<form ng-submit="show_form(member)">
-				<input type="text" class="form-control"  ng-model="member.role" placeholer="assign role">
+				<input type="text" class="form-control"  ng-model="member.role" placeholder="assign role">
 					</form>
        </div>
 				
