@@ -78,6 +78,12 @@ angular.module('myApp.controllers', ['ngDragDrop'])
          }
         }
         $scope.onDrop = function($event,$data,array,parent){
+        for(var i=0;i<parent.members.length;i++){
+            if($data.name==parent.members[i].name){
+            alert($data.name+" already added");
+            return ;
+            }
+        }
          parent.display=false;
          array.push({"name":$data.name});
          $rootScope.prj_name=parent.name;
