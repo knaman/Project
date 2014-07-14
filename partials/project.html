@@ -3,11 +3,15 @@
 <h4>Members</h4>
 <ul>
 	<li ng-repeat ="member in project.members">
-	 {{member.name}}
-	 <form ng-submit="AddPrj()">
-	   <input type="text" class="form-control role-{{member.role}}"  ng-model="member.role" placeholder="Assign Role">
+	 {{member.name}}-
+	  <div style="float:left;width:150px;" ng-show="show">
+	 <form ng-submit="show_form()">
+          <input type="text" class="form-control"  ng-model="member.role" placeholder="Assign Role">
          </form>
-         {{member.role}}
+         </div>
+         <div ng-hide="show">
+         	<i>{{member.role}}</i>
+         </div>
 	</li>
 </ul>
 <h4>Options</h4>
