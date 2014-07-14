@@ -1,9 +1,3 @@
-<select class="form-control">
-    <option value="All" ng-click="prj_filter('All')">All</option>
-    <option value="Important">Important</option>
-    <option value="Completed">Completed</option>
-    <option value="Time-Bound">Time-Bound</option>
-</select>
 <div class="row">
   				<div class="col-xs-12 col-md-8">
 					<div class="title">
@@ -37,6 +31,7 @@
     				<li ng-click="prj_filter('Time-Bound')"><a href="" >Time-Bound</a></li>
   				</ul>
 			</div>
+			<i>{{type}} projects</i>
 			<div class="projects">
 			<div class="row">
 				<div class="col-xs-6 col-md-4 coloumns" ng-repeat ="project in projects | filter:filter_prj" >
