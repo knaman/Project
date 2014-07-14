@@ -3,14 +3,14 @@
 <h4>Members</h4>
 <ul>
 	<li ng-repeat ="member in project.members">
-	<div style="float:left;width:150px">{{member.name}}-</div>
-	<div ng-show="member.assign" style="float:left;width:150px;">
+	<div style="display:inline">{{member.name}}-</div>
+	<div ng-show="member.assign" style="display:inline">
 	<form ng-submit="show_form(member)">
-				<input type="text" class="form-control"  ng-model="member.role" >
+				<input type="text" class="form-control"  ng-model="member.role" placeholer="assign role">
 					</form>
        </div>
 				
-	 <div style="float:left;width:150px" ng-hide="member.assign"><i>{{member.role}}</i></div>
+	 <div style="display:inline" ng-hide="member.assign"><i>{{member.role}}</i></div>
 	 </br>
 	</li>
 </ul>
