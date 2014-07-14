@@ -3,7 +3,14 @@
 <h4>Members</h4>
 <ul>
 	<li ng-repeat ="member in project.members">
-	 {{member.name}}
+	{{member.name}}-
+	<div ng-show="member.assign" style="float:left;width:150px;">
+	<form ng-submit="show_form(member)">
+				<input type="text" class="form-control"  ng-model="member.role" >
+					</form>
+				</div>
+				
+	 <div ng-hide="member.assign"><i>{{member.role}}</i></div>
 	</li>
 </ul>
 <h4>Options</h4>
