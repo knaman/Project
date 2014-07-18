@@ -130,7 +130,7 @@ angular.module('myApp.controllers', ['ngDragDrop'])
      }
      $scope.show_form=function(member){
         console.log(member);
-        if(member.role==null){
+        if(member.role==" "){
             alert("Empty Role cannot be assigned to " + member.name);
         }
         else{
